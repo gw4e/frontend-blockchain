@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/navbar'); %>
+</header>
+
+<main>
+    <section>
+        <section class="pb-4">
+            <div class="bg-white  ">
+
+                <section class="w-100 p-4 d-flex justify-content-center pb-4">
+
+                    <form action="/login" style="width: 44rem;"   novalidate>
+                        <div class="form-outline mb-4">
+                            <input type="input" id="loginemail" name="loginemail" class="form-control">
+                            <label class="form-label" for="loginemail" style="margin-left: 0px;">Email address</label>
+                            <div class="form-notch">
+                                <div class="form-notch-leading" style="width: 9px;"></div>
+                                <div class="form-notch-middle" style="width: 88.8px;"></div>
+                                <div class="form-notch-trailing"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <div class="invalid-feedback d-block">
+                                <input type="password" id="loginpwd"  name="loginpwd" class="form-control">
+                            </div>
+                            <label class="form-label" for="loginpwd" style="margin-left: 0px;">Password</label>
+                            <div class="form-notch">
+                                <div class="form-notch-leading" style="width: 9px;"></div>
+                                <div class="form-notch-middle" style="width: 64.8px;"></div>
+                                <div class="form-notch-trailing"></div>
+                            </div>
+                        </div>
+
+                        <input  type="submit"  formmethod="post" id="login" class="w-100 btn btn-primary btn-block" value="Sign in">
+                        <% if(error) { %>
+                            <p class="text-danger">Please enter a valid email and password.</p>
+                        <% } %>
+
+                    </form>
+                </section>
+            </div>
+            <div class="text-center">
+                <p>Not a member? <a id="register" href="/register">Register</a></p>
+            </div>
+        </section>
+    </section>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

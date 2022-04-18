@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/navbar'); %>
+</header>
+
+<main>
+    <section>
+        <section class="pb-4">
+            <div class="bg-white  ">
+
+                <section class="w-100 p-4 d-flex justify-content-center pb-4">
+
+                    <form style="width: 22rem;"   novalidate>
+                        <div class="form-outline mb-4">
+                            <input type="input" id="usersemail" name="usersemail" class="form-control" value="a,b,c,d">
+                            <label class="form-label" for="usersemail" style="margin-left: 0px;">Users email</label>
+                            <div class="form-notch">
+                                <div class="form-notch-leading" style="width: 9px;"></div>
+                                <div class="form-notch-middle" style="width: 88.8px;"></div>
+                                <div class="form-notch-trailing"></div>
+                            </div>
+                        </div>
+
+                        <input  type="submit" formmethod="post" id="test" class="w-100 btn btn-primary btn-block" value="Create Users">
+
+                    </form>
+                </section>
+            </div>
+        </section>
+    </section>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/navbar'); %>
+</header>
+
+<main>
+    <br>
+    <section class="w-100 p-8 d-flex justify-content-center pb-8">
+        <div class="row">
+            <div class="col-md-12 mb-4">
+
+                    <div class="card-body">
+                        <form style="width: 66rem;" >
+                            <div class="row mb-1">
+                                <div class="col-11" >
+                                    <table id="table" data-toggle="table" data-url="/displaynetwork" class="mb-1 table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th data-field="node">
+                                              <span>
+                                                    Node
+                                              </span>
+                                            </th>
+                                            <th data-field="contact">
+                                              <span >
+                                                     Peer
+                                              </span>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <div class="col-1">
+                                    <i class="bi-info-circle" rel="tooltip" title="A blockchain network is comprised of peer nodes, each of which can hold copies of the blockchain (ledger)." ></i>
+                                </div>
+                            </div>
+                            <div class="row mb-1">
+                                <div class="col-11" >
+                                    <input  type="button" id="configure" class="w-100 btn btn-primary btn-block register" value="Configure">
+                                </div>
+                                <div class="col-1">
+                                    <i class="bi-info-circle" rel="tooltip" title="Build the network. Let it be known who is the peer of whom." ></i>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    function configure () {
+        $.ajax({
+            url: '/configure',
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            success: function(data) {
+                const $table = $('#table')
+                $table.bootstrapTable("load", data.desc);
+            },
+            error: function(data) {
+                console.log("error")
+            }
+        });
+    }
+    $("#configure").click(function(){
+        configure();
+    });
+</script>
+

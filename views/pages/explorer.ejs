@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/navbar'); %>
+</header>
+
+<main>
+    <section>
+
+        <section class="w-100 pb-4">
+
+            <div class="bg-white  ">
+                <section class="w-100 p-4 d-flex justify-content-center pb-4">
+
+                    <form style="width: 66rem;"   novalidate>
+                        <div class="row mb-1">
+
+                            <div class="col-11">
+                                <div  >
+                                    <label for="targetnode" class="form-label">Blockchain Network Node</label>
+                                    <div class="input-group">
+                                        <select class="form-select" id="targetnode" name="targetnode" >
+                                            <option selected>Choose a node...</option>
+                                            <% backendUrls.forEach(function(url){ %>
+                                                <option value="<%- url %>"><%- url %></option>
+                                            <%});%>
+                                        </select>
+                                        <div class="input-group-prepend">
+                                            <button class="btn" id="refresh" ><i class="fa fa-refresh"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <i class="bi-info-circle" rel="tooltip" id="tooltip-source-blockchain-id" title="xxxxx" ></i>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row mb-1">
+                            <div class="col-11">
+                                <fieldset class="scheduler-border">
+                                    <label for="targetwallet" class="form-label">Wallet's owner</label>
+                                    <div class="control-group">
+                                        <select class="form-select" id="targetwallet" name="targetwallet" >
+                                            <option selected>Choose...</option>
+                                            <% walletsName.forEach(function(email){ %>
+                                                <option value="<%- email %>"><%- email %></option>
+                                            <%});%>
+                                        </select>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="col-1">
+                                <i class="bi-info-circle" rel="tooltip" title="The wallet's transactions in the above selected node Blockchain" ></i>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row mb-1">
+
+                                <div class="col-11" >
+                                    <table id="table" data-pagination="true" data-toggle="table" data-url="/describeBlockchain" class="mb-1 table-striped ">
+                                        <thead>
+                                        <tr>
+                                            <th data-field="blockNumber">
+                                          <span class="text-dark">
+
+                                          </span>
+                                            </th>
+                                            <th data-field="blockTimestamp">
+                                          <span class="text-dark">
+                                            Timestamp
+                                          </span>
+                                            </th>
+                                            <th data-field="blockNonce">
+                                          <span class="text-dark">
+                                            Nonce
+                                          </span>
+                                            </th>
+                                            <th data-field="transactionAmount">
+                                          <span class="text-dark">
+                                            Amount
+                                          </span>
+                                            </th>
+                                            <th data-field="transactionFrom">
+                                          <span class="text-dark">
+                                            From
+                                          </span>
+                                            </th>
+                                            <th data-field="transactionTo">
+                                          <span class="text-dark">
+                                            To
+                                          </span>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                    </table>
+                                    <p class="text-danger" class="invisible"  id="nodestatusmessage" >Node unavailable</p>
+                                </div>
+                                <div class="col-1">
+                                    <i class="bi-info-circle" rel="tooltip" title="The transactions inside the current blockchain." ></i>
+                                </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </section>
+    </section>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    function getData () {
+        const targetBackend = encodeURIComponent($('#targetnode').val())
+        const wallet = encodeURIComponent($('#targetwallet').val())
+        const url =  '/describeBlockchain?targetBackend='+targetBackend+'&wallet='+wallet;
+        $.ajax({
+            url: url,
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+            },
+            success: function(data) {
+                const $table = $('#table')
+                $table.bootstrapTable("load", data.desc.transactions);
+                $('#nodestatusmessage').addClass("invisible").removeClass("visible");
+                $('#tooltip-source-blockchain-id').attr('title', `The node updated its blockchain (ledger) from ${data.desc.urlSource}`)
+            },
+            error: function(data) {
+                $('#nodestatusmessage').addClass("visible").removeClass("invisible");
+                var $table = $('#table')
+                const mydata =
+                    [
+                        {
+                            "blockNumber": "--",
+                            "blockNonce": "--",
+                            "blockTimestamp": "--",
+                            "transactionAmount":"--",
+                            "transactionFrom": "--",
+                            "transactionTo": "--"
+                        }
+                    ];
+                $table.bootstrapTable("load", mydata);
+            }
+        });
+    }
+    $('#targetnode').change(function() {
+        getData()
+    })
+    $('#targetwallet').change(function() {
+        getData()
+    })
+    $("#refresh").click(function(){
+        getData()
+    });
+    $('#nodestatusmessage').addClass("invisible").removeClass("visible");
+    jQuery(document).ready(function($){
+        $("#targetnode").get(0).selectedIndex = 1;
+        $("#targetnode").change()
+    });
+
+</script>

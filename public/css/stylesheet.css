@@ -1,0 +1,33 @@
+.pagination > li > a
+{
+    background-color: white;
+    color: rgb(108, 117, 125);
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: #5a5a5a;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.pagination > .active > a
+{
+    color: white;
+    background-color: rgb(108, 117, 125) !Important;
+    border: solid 1px rgb(108, 117, 125) !Important;
+}
+
+.pagination > .active > a:hover
+{
+    background-color: rgb(108, 117, 125) !Important;
+    border: solid 1px rgb(108, 117, 125);
+}
+
+.smallicon{
+    color: gray;
+    font-size: 50px;
+}

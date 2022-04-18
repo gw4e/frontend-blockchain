@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/navbar'); %>
+</header>
+
+<main>
+    <section>
+
+        <section class="w-100 pb-4">
+
+            <div class="bg-white  ">
+                <section class="w-100 p-4 d-flex justify-content-center pb-4">
+
+                    <form action="/exchange" style="width: 44rem;"   novalidate>
+                        <div class="row mb-1">
+                            <div class="col-11">
+                                <label for="targetnode" class="form-label">Target Blockchain Network Node</label>
+                                <select class="form-select" id="targetnode" name="targetnode" >
+                                    <option selected><%- currentBackendUrl %></option>
+                                    <% backendUrls.forEach(function(url){ %>
+                                        <option value="<%- url %>"><%- url %></option>
+                                    <%});%>
+                                </select>
+                            </div>
+                            <div class="col-1">
+                                <i class="bi-info-circle" rel="tooltip" title="On a blockchain, all the nodes are connected to each other and they continuously exchange the newest information on the blockchain with each other. When a node receives a transaction, it broadcast it to other nodes in the network."></i>
+                            </div>
+                            <p class="text-danger" class="invisible"  id="nodestatusmessage" >Node unavailable</p>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-11">
+                                <div class="mb-1">
+                                    <label for="accountbalance" class="form-label">Current Account Balance</label>
+                                    <input type="text" class="form-control" id="accountbalance" name="accountbalance" value="<%- accountBalance %>" readonly>
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <i class="bi-info-circle" rel="tooltip" title="A transaction is a transfer of value on the blockchain. A transaction is when one person gives a designated amount of cryptocurrency they own to another person account represented here by a wallet . The balance wallet is computed by comparing the total amount debited and the total amount credited to the account."></i>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-11">
+                                <div class="mb-1">
+                                    <label for="amounttotransfer" class="form-label">Transaction Amount</label>
+                                    <input type="text" class="form-control" id="amounttotransfer" name="amounttotransfer" required>
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <i class="bi-info-circle" rel="tooltip" title="The amount of cryptocurrency you want to transfer." ></i>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-11">
+                                <label for="targetnode" class="form-label">Target Wallet</label>
+                                <select class="form-select" id="targetwallet" name="targetwallet" >
+                                    <option selected>Choose...</option>
+                                    <% walletsName.forEach(function(email){ %>
+                                        <option value="<%- email %>"><%- email %></option>
+                                    <%});%>
+                                </select>
+                            </div>
+                            <div class="col-1">
+                                <i class="bi-info-circle" rel="tooltip" title="Email associated to a user wallet. Each user's cryptocurrencies are stored in a kind of digital wallet linked to a public key used to receive cryptocurrency. (While the corresponding private key is used to send cryptocurrency)." ></i>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-11">
+                                <div class="form-outline mb-1">
+                                    <label for="privatekey">Private key</label>
+                                    <textarea class="form-control" id="privatekey"  name="privatekey"  rows="6" required></textarea>
+                                </div>
+                            </div>
+                            <div class="col-1">
+                                <i class="bi-info-circle" rel="tooltip" title="You got this key when you registered. A private key is a secret number used in cryptography. In cryptocurrency, private keys are used to sign transactions and prove ownership of a blockchain address (Here wallets)." ></i>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-11">
+                                <input  type="submit" action=""  formmethod="post" id="proceed" class="w-100 btn btn-primary btn-block" value="Proceed">
+                            </div>
+                            <div class="col-1">
+                            </div>
+                        </div>
+                        <div class="invisible">
+                            <input  id="sourcePublicKey" value="<%- sourcePublicKey %>">
+                        </div>
+                        <% if(error) { %>
+                            <p class="text-danger">Transaction Error. <%=error%></p>
+                        <% } %>
+                        <% if(transactionProcessingMessage) { %>
+                            <p id="transactionmessage" class="text-success"><%=transactionProcessingMessage%></p>
+                        <% } %>
+                    </form>
+                </section>
+            </div>
+        </section>
+    </section>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    $('#targetnode').change(function() {
+        const wallet = $('#sourcePublicKey').val()
+        const targetBackend = $('#targetnode').val()
+        const url =  '/get_balance';
+
+        $.ajax({
+            url: url,
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            data: JSON.stringify({"wallet": wallet, "targetBackend" : targetBackend}),
+            success: function(data) {
+                $('#accountbalance').val(data["value"])
+                $('#nodestatusmessage').addClass("invisible").removeClass("visible");
+            },
+            error: function(data) {
+                $('#accountbalance').val("")
+                $('#nodestatusmessage').addClass("visible").removeClass("invisible");
+                console.log(`Failed to get balance. Is the target node ${targetBackend} running ?`);
+            }
+        });
+
+    })
+    $('#nodestatusmessage').addClass("invisible").removeClass("visible");
+</script>
+

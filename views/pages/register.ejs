@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/navbar'); %>
+</header>
+
+<main>
+    <br>
+    <section class="w-100 p-8 d-flex justify-content-center pb-8">
+        <div class="row">
+            <div class="col-md-12 mb-4">
+                <div class="card mb-4">
+                    <div class="card-header py-3">
+                        <h5 class="mb-0">Registration details</h5>
+                    </div>
+                    <div class="card-body">
+                        <form style="width: 44rem;" >
+                            <% if(private_key) { %>
+                            <p class="text-danger">Copy this key and keep it secret. You will use it to create transactions !</p>
+                            <div class="form-group">
+                                <textarea class="form-control" id="userkey" rows="10"><%=private_key %></textarea>
+                                <textarea class="form-control d-none" id="userpublickey" rows="10"><%=public_key %></textarea>
+                            </div>
+                            <br>
+                            <a href="/login" id="signin" class="w-100 btn btn-primary btn-block register" role="button">Sign in</a>
+                            <% } else { %>
+                                <h5 class="mb-4">Credentials</h5>
+                                <div class="form-outline mb-4">
+                                    <input type="input" id="loginemail" name="loginemail"  class="form-control required">
+                                    <label class="form-label" for="loginemail" style="margin-left: 0px;">Email address</label>
+                                    <div class="form-notch">
+                                        <div class="form-notch-leading" style="width: 9px;"></div>
+                                        <div class="form-notch-middle" style="width: 88.8px;"></div>
+                                        <div class="form-notch-trailing"></div>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <div class="invalid-feedback d-block">
+                                        <input type="password" id="loginpwd"  name="loginpwd" class="form-control" required>
+                                    </div>
+                                    <label class="form-label" for="loginpwd" style="margin-left: 0px;">Password</label>
+                                    <div class="form-notch">
+                                        <div class="form-notch-leading" style="width: 9px;"></div>
+                                        <div class="form-notch-middle" style="width: 64.8px;"></div>
+                                        <div class="form-notch-trailing"></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <div class="invalid-feedback d-block">
+                                        <input type="password" id="loginpwdverif"  name="loginpwdverif" class="form-control" required>
+                                    </div>
+                                    <label class="form-label" for="loginpwd" style="margin-left: 0px;">Password</label>
+                                    <div class="form-notch">
+                                        <div class="form-notch-leading" style="width: 9px;"></div>
+                                        <div class="form-notch-middle" style="width: 64.8px;"></div>
+                                        <div class="form-notch-trailing"></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <div class="form-notch">
+                                        <input type="text" id="formAmountOnCard" class="form-control" name="formAmountOnCard"  placeholder="How much 'Pycotr' coins crypto do you want to buy ?" required/>
+                                        <label class="form-label" for="formAmountOnCard">Amount</label>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-4">
+                                    <div class="form-outline">
+                                        <div class="form-notch">
+                                            <input type="text" id="formNameOnCard" class="form-control"  name="formNameOnCard"  value = "John Doe" required/>
+                                            <label class="form-label" for="formNameOnCard">Name on card</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline">
+                                        <div class="form-notch">
+                                            <input type="text" id="formCardNumber" class="form-control" name="formCardNumber" value = "4387729175443174" required/>
+                                            <label class="form-label" for="formCardNumber">Credit card number</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-4">
+                                    <div class="col-3">
+                                        <div class="form-notch">
+                                            <input type="text" id="formExpiration" class="form-control" name="formExpiration"  value = "2027-08-31" required/>
+                                            <label class="form-label" for="formExpiration">Expiration</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-notch">
+                                            <input type="text" id="formCVV" class="form-control" name="formCVV"  value = "320" required/>
+                                            <label class="form-label" for="formCVV">CVV</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input  type="submit" formmethod="post" id="register" class="w-100 btn btn-primary btn-block register" value="Register">
+                                <% if(error) { %>
+                                <p class="text-danger">Registration Error. <%=error%></p>
+                                <% } %>
+                            <% } %>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    function getNameFromEmail(src) {
+        try {
+            return src.val().split('@')[0]
+        } catch (e) {
+            return src.val()
+        }
+    }
+    const $src = $('#loginemail'), $dst = $('#formNameOnCard');
+    $src.focusout(function() {
+        $dst.val(getNameFromEmail($src));
+    }).blur(function() {
+        $dst.val(getNameFromEmail($src));
+    });
+</script>

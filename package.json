@@ -1,0 +1,28 @@
+{
+  "name": "node-ejs",
+  "main": "server.js",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "pbkdf2-password": "^1.2.1"
+  },
+  "devDependencies": {
+    "child_process": "^1.0.2",
+    "jest": "^27.5.1",
+    "jest-puppeteer": "^6.1.0",
+    "nodemon": "^2.0.15",
+    "puppeteer": "^13.5.2",
+    "supertest": "^6.2.2",
+    "url": "^0.11.0",
+    "util": "^0.12.4",
+    "wait-on": "^6.0.1"
+  },
+  "scripts": {
+    "test": "jest --detectOpenHandles",
+    "test:e2e": "ENV_FILE=.env jest --config ./jest.config.js --runInBand --detectOpenHandles"
+  }
+}
