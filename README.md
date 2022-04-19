@@ -185,6 +185,7 @@ Let's modify the rate of nodes and see what's happen
 - Now the Node 1 mines blocks every 30 seconds.
 
 
+
 - Click on the Configure menu item in the navigation bar
 - Click the Configure button
 - Click on Node 3 "http://localhost:3001" link
