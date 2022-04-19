@@ -8,7 +8,7 @@
 </p>
 
 A Decentralized Application is a piece of software that has its backend code running on a decentralized peer to peer network. 
-This project holds the frontend part that connects with the backend to provide its features. If you did not yet read the backend [documentation](https://github.com/gw4e/backend-blockchain/blob/main/README.md), please do so !
+This project holds the frontend part that connects with the backends (nodes) to provide its features. If you did not yet read the backend [documentation](https://github.com/gw4e/backend-blockchain/blob/main/README.md), please do so !
 
 ## Features
 With the front, you will be able to :
