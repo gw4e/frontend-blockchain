@@ -53,7 +53,7 @@ Start in debug mode the **main.js** file.
 
 #### To register
 <p align="left" width="100%">
-    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/register.png?raw=true">
+    <img width="80%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/register.png?raw=true">
 </p>
 
 - In a browser, enter http://localhost:8080
@@ -63,7 +63,7 @@ Start in debug mode the **main.js** file.
 - Click Register
 
 <p align="left" width="100%">
-    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/regsitration_details.png?raw=true">
+    <img width="80%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/regsitration_details.png?raw=true">
 </p>
 
 - Copy the private key
@@ -71,7 +71,7 @@ Start in debug mode the **main.js** file.
 
 #### To Sign-In
 <p align="left" width="100%">
-    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/sign-in.png?raw=true">
+    <img width="80%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/sign-in.png?raw=true">
 </p>
 
 - Feed the form with the **email prefix** (for example 'test'  if you've registered with test@gg.com)
@@ -79,14 +79,14 @@ Start in debug mode the **main.js** file.
 
 #### To Configure the network (mandatory steps)
 <p align="left" width="100%">
-    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/configure_step_1.png?raw=true">
+    <img width="80%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/configure_step_1.png?raw=true">
 </p>
 
 - Click Configure in the navigation bar
 - Click the configure button
 
 <p align="left" width="100%">
-    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/configure_step_2.png?raw=true">
+    <img width="80%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/configure_step_2.png?raw=true">
 </p>
 
 - The network configuration is displayed
@@ -102,13 +102,13 @@ As a wallet is represented by a public key, before being able to submit a transa
 - Now we have 2 users registered, sign-in with the first user
 
 <p align="left" width="100%">
-    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/transaction_step_1.png?raw=true">
+    <img width="80%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/transaction_step_1.png?raw=true">
 </p>
 
 - Click **Transaction** menu item in the navigation bar
 
 <p align="left" width="100%">
-    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/transaction_step_2.png?raw=true">
+    <img width="80%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/transaction_step_2.png?raw=true">
 </p>
 
 - Select the node "http://localhost:3003" as **Target Blockchain Network Node**
@@ -118,7 +118,7 @@ As a wallet is represented by a public key, before being able to submit a transa
 - Click **Proceed**
 
 <p align="left" width="100%">
-    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/transaction_step_3.png?raw=true">
+    <img width="80%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/transaction_step_3.png?raw=true">
 </p>
 
 - The transaction has been submitted on node "http://localhost:3003"
@@ -136,7 +136,7 @@ See [Consensus or The Longest Chain rule](https://github.com/gw4e/backend-blockc
 
 #### To Explorer the transactions
 <p align="left" width="100%">
-    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/explore_step_1.png?raw=true">
+    <img width="80%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/explore_step_1.png?raw=true">
 </p>
 
 - Click Explore in the navigation bar
@@ -145,7 +145,7 @@ See [Consensus or The Longest Chain rule](https://github.com/gw4e/backend-blockc
 - You can see all transactions belonging to this user
 
 <p align="left" width="100%">
-    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/explore_step_2.png?raw=true">
+    <img width="80%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/explore_step_2.png?raw=true">
 </p>
 
 Remember that each node has its own blockchain, and even you've submitted the transaction to node "http://localhost:3003", 
@@ -158,7 +158,7 @@ To see that other nodes have agreed on blockchain maintained by the node "http:/
 - A tooltip appears and display from which node the current blockchain of the selected node comes from
 
 <p align="left" width="100%">
-    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/explore_step_3.png?raw=true">
+    <img width="80%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/explore_step_3.png?raw=true">
 </p>
 
 
@@ -172,7 +172,7 @@ Each node for tutorial purpose, mines the transactions at a different rate.
 The consensus is always won by the Node 1 as shown below
 
 <p align="left" width="100%">
-    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/node_1_win.png?raw=true">
+    <img width="80%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/node_1_win.png?raw=true">
 </p>
 
 Let's modify the rate of nodes and see what's happen
@@ -198,7 +198,7 @@ Let's modify the rate of nodes and see what's happen
 - Node 3 is now the winner as shown below
 
 <p align="left" width="100%">
-    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/node_3_win.png?raw=true">
+    <img width="80%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/node_3_win.png?raw=true">
 </p>
 
 ## Disclaimer:
