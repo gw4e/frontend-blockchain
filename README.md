@@ -197,7 +197,7 @@ Let's modify the rate of nodes and see what's happen
 
 - Click on the Explore menu item in the navigation bar
 - Select the Node 1 and move the cursor to see the tooltip value
-- Node 3 is now the winner as shown below
+- Node 3 is now the winner as shown below. If not the case just refresh the page, it takes some time for all nodes to complete a mining cycle and claim consensus.
 
 <p align="left" width="100%">
     <img width="80%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/node_3_win.png?raw=true">
