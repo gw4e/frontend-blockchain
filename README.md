@@ -84,6 +84,25 @@ Start in debug mode the **main.js** file.
 
 #### To Submit a transaction 
 
+Submitting a transaction means that you will send a certain amount of Pycotr currency from a wallet to another wallet.
+Whenever a user registers, a public and private key are generated. Do you remember, you copied the private key when you've registred earlier.
+As a wallet is represented by a public key, before being able to submit a transaction we need a second user.
+
+- Click the email in the upper right corner of the web page, this will signout you 
+- Proceed as you did in step **To register** in order to create this second user.
+- Now we have 2 users registered, sign-in with the first user![img.png](img.png)
+
+<p align="left" width="100%">
+    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/transaction_step_1.png?raw=true">
+</p>
+
+- Select the node "http://localhist:3003" as **Target Blockchain Network Node**
+- Enter an amount **Transaction Amount**
+- Select the email of the second user as **Target Wallet**
+- Enter the private key of the first registered user
+- Click **Proceed**
+
+
 
 ## Disclaimer:
 This project is only for educational or learning purpose. Use at your own risk.
