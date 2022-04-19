@@ -36,8 +36,8 @@ class Server {
     }
 
     static stop() {
-        Server.server.close(() => {
-        });
+        Server.server ? Server.server.close(() => {
+        }) : "";
     }
 
     static createServer ()  {

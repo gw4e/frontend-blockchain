@@ -23,6 +23,6 @@
   },
   "scripts": {
     "test": "jest --detectOpenHandles",
-    "test:e2e": "ENV_FILE=.env jest --config ./jest.config.js --runInBand --detectOpenHandles"
+    "test:e2e": "ENV_FILE=.env jest --config ./jest.config.js --runInBand --detectOpenHandles tests/e2e/lifecycle.test.js"
   }
 }

@@ -27,6 +27,12 @@ async function waitFor(func, context, onfail, timeout) {
 }
 
 async function startBackends() {
+    if (!process.env.BACKEND_EXECUTABLE || process.env.BACKEND_EXECUTABLE.length == 0) {
+        throw new Error("Project not configured. Before running the tests, you need to : \n'" +
+         "   - Checkout the backend from https://github.com/gw4e/backend-blockchain\n" +
+         "   - Install the backend as described in the backend readme\n" +
+         "   - Set the path location of the backend-blockchain project in the BACKEND_EXECUTABLE property of the .env file")
+    }
     await spawn(
         `start_nodes.sh`,
         [],
