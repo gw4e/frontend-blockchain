@@ -82,6 +82,8 @@ Start in debug mode the **main.js** file.
 
 - The network configuration is displayed
 
+#### To Submit a transaction 
+
 
 ## Disclaimer:
 This project is only for educational or learning purpose. Use at your own risk.
