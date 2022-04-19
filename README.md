@@ -124,7 +124,7 @@ As a wallet is represented by a public key, before being able to submit a transa
 - The transaction has been submitted on node "http://localhost:3003"
 - The transaction will be broadcast to other nodes
 
-Each node for tutorial purpose , mine the transactions at a different rate.
+Each node for tutorial purpose , mines the transactions at a different rate.
 
 - Node 1 : "http://localhost:3001" --> 5sec
 - Node 2 : "http://localhost:3002" --> 10sec
@@ -142,7 +142,7 @@ See [Consensus or The Longest Chain rule](https://github.com/gw4e/backend-blockc
 - Click Explore in the navigation bar
 - Select the node "http://localhost:3001"
 - Select the email of the user 1
-- You can see all transactions belonging to this user
+- You can see all transactions related to this user
 
 <p align="left" width="100%">
     <img width="80%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/explore_step_2.png?raw=true">
@@ -193,6 +193,7 @@ Let's modify the rate of nodes and see what's happen
 - Click the Configure button 
 - Now the Node 3 mines blocks every 2 seconds.
 
+<br>
 
 - Click on the Explore menu item in the navigation bar
 - Select the Node 1 and move the cursor to see the tooltip value
