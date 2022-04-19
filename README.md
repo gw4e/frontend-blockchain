@@ -80,6 +80,9 @@ Start in debug mode the **main.js** file.
     <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/configure_step_2.png?raw=true">
 </p>
 
+- The network configuration is displayed
+
+
 ## Disclaimer:
 This project is only for educational or learning purpose. Use at your own risk.
 
