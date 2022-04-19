@@ -43,12 +43,30 @@ Start in debug mode the **main.js** file.
 - Run **start.sh**
 
 #### To register
+<p align="left" width="100%">
+    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/register.png?raw=true">
+</p>
+
 - In a browser, enter http://localhost:8080
 - Click Sign-In link
 - At the bottom of the page, click the Register link
 - Feed the form (keep the provided fake values)
--
+- Click Register
 
+<p align="left" width="100%">
+    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/register_details.png?raw=true">
+</p>
+
+- Copy the private key
+- Click Sign-In
+
+#### To Sign-In
+<p align="left" width="100%">
+    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/sign-in.png?raw=true">
+</p>
+
+- Feed the form
+- Click Sign-In
 
 
 ## Disclaimer:
