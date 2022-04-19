@@ -1,7 +1,7 @@
 ## Pycotr FrontEnd
 ### _A blockchain front end for a naive cryptocurrency_
 
-### Pycotr <img src="http://github.com/gw4e/frontend-blockchain/blob/main/public/images/brand-white.png?raw=true" data-canonical-src="http://github.com/gw4e/frontend-blockchain/blob/main/public/images/brand-white.png" width="30" height="30" /> FrontEnd
+### Pycotr <img src="http://github.com/gw4e/frontend-blockchain/blob/main/public/images/brand-white.png?raw=true" data-canonical-src="http://github.com/gw4e/frontend-blockchain/blob/main/public/images/brand-white.png" width="20" height="20" /> FrontEnd
 
 <p align="left" width="100%">
     <img width="100%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/homepage.png?raw=true">
