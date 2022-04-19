@@ -161,6 +161,46 @@ To see that other nodes have agreed on blockchain maintained by the node "http:/
     <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/explore_step_3.png?raw=true">
 </p>
 
+
+#### Playing with Mining Rate 
+Each node for tutorial purpose, mines the transactions at a different rate.
+
+- Node 1 : "http://localhost:3001" --> 5sec
+- Node 2 : "http://localhost:3002" --> 10sec
+- Node 3 : "http://localhost:3003" --> 15sec
+
+The consensus is always won by the Node 1 as shown below
+
+<p align="left" width="100%">
+    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/node_1_win.png?raw=true">
+</p>
+
+Let's modify the rate of nodes and see what's happen
+
+- Click on the Configure menu item in the navigation bar
+- Click the Configure button
+- Click on Node 1 "http://localhost:3001" link
+- Enter 30 in the Pause input field
+- Click the Configure button 
+- Now the Node 1 mines blocks every 30 seconds.
+
+
+- Click on the Configure menu item in the navigation bar
+- Click the Configure button
+- Click on Node 3 "http://localhost:3001" link
+- Enter 2 in the Pause input field
+- Click the Configure button 
+- Now the Node 3 mines blocks every 2 seconds.
+
+
+- Click on the Explore menu item in the navigation bar
+- Select the Node 1 and move the cursor to see the tooltip value
+- Node 3 is now the winner as shown below
+
+<p align="left" width="100%">
+    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/node_3_win.png?raw=true">
+</p>
+
 ## Disclaimer:
 This project is only for educational or learning purpose. Use at your own risk.
 
