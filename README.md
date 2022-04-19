@@ -184,9 +184,7 @@ Let's modify the rate of nodes and see what's happen
 - Click the Configure button 
 - Now the Node 1 mines blocks every 30 seconds.
 
-
-
-
+<br>
 
 - Click on the Configure menu item in the navigation bar
 - Click the Configure button
