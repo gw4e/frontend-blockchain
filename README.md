@@ -4,7 +4,7 @@
 ### Pycotr <img src="http://github.com/gw4e/frontend-blockchain/blob/main/public/images/brand-white.png?raw=true" data-canonical-src="http://github.com/gw4e/frontend-blockchain/blob/main/public/images/brand-white.png" width="30" height="30" /> FrontEnd
 
 <p align="left" width="100%">
-    <img width="100%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/home.png?raw=true">
+    <img width="100%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/homepage.png?raw=true">
 </p>
 
 A Decentralized Application is a piece of software that has its backend code running on a decentralized peer to peer network. 
