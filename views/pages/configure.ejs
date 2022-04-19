@@ -23,7 +23,7 @@
                                     <table id="table" data-toggle="table" data-url="/displaynetwork" class="mb-1 table-striped">
                                         <thead>
                                         <tr>
-                                            <th data-field="node">
+                                            <th data-field="node" data-formatter="LinkFormatter">
                                               <span>
                                                     Node
                                               </span>
@@ -66,6 +66,9 @@
 </html>
 
 <script type="text/javascript">
+    function LinkFormatter(value, row, index) {
+        return  "<a href='/configurepause?url=" + encodeURIComponent(value) + "'>" + value + "</a>" ;
+    }
     function configure () {
         $.ajax({
             url: '/configure',

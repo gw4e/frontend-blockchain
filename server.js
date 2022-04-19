@@ -80,6 +80,8 @@ class Server {
         app.post('/get_balance',[checkBackend,checkLogin], [checkLogin], serviceController.getBalanceForWallet);
         app.get('/describeBlockchain',[checkBackend,checkLogin], serviceController.describeBlockchain);
         app.get('/displaynetwork',[checkBackend,checkLogin], configureController.displayNetwork);
+        app.get('/configurepause',[checkBackend,checkLogin], configureController.displayConfigurationPause);
+        app.post('/configurepause',[checkBackend,checkLogin], configureController.configurePause);
         app.post('/configure', [checkBackend], serviceController.configureNetwork);
         app.get('/test', [checkBackend],testController.test);
         app.post('/test',[checkBackend], testController.createuser);

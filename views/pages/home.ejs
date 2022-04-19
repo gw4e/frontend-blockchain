@@ -30,7 +30,6 @@
             </ul>
             <br>
             <h3 style="font-family: Arial">What is BlockChain ?</h3>
-            <br>
             <p style="font-family: Arial">
                 A blockchain is a distributed database that is shared among the nodes of a computer network.
                 It electronically stores information in digital form.
@@ -42,6 +41,25 @@
                 <div class="text-center">
                     <img src="../../images/blockchain_and_transaction.png" class="img-fluid" style="width: 60%" alt="Blockchain">
                 </div>
+
+            <h3 style="font-family: Arial">What is Block ?</h3>
+            A "Block" refers to data being stored in consecutive groups known as "blocks". If you send "Pycotr" to someone else, the transaction data needs to be added to a block to be successful.
+            <h3 style="font-family: Arial">What is Chain ?</h3>
+            A "Chain" refers to the fact that each block cryptographically references its parent so that blocks get chained together.
+            The data in a block cannot change without changing all subsequent blocks, which would require the consensus of the entire network.
+            Every nodes in the network must agree upon each new block and the chain as a whole. Nodes ensure everyone interacting
+            with the blockchain has the same data. To accomplish this distributed agreement, blockchains need a consensus mechanism.
+            <h3 style="font-family: Arial">What is Consensus ?</h3>
+            Many nodes works to mine blocks. This means that node who wants to add new blocks to the chain must solve a
+            difficult puzzle that requires a lot of computing power. Solving the puzzle "proves" that you have done the "work"
+            by using computational resources. Once a node did this work, it needs to tell to other nodes <b>'Hey here my blockchain, please validate,
+            and if validated and it is longer than yours then I won the consensus, i will be rewarded and you need to keep my version of the blockchain as yours'</b>.
+            This discards the shorter chains, and the longest chain is adopted by the whole network. Nodes stop minin the current block, and try gain with new block
+            to become the next winner ! The rewards motivate the node to calculate and mine the longest block.
+            <br><br>
+            <div class="text-center">
+                <img src="../../images/chain_in_consensus.png" class="img-fluid" style="width: 60%" alt="Blockchain">
+            </div>
         </div>
     </div>
 </div>

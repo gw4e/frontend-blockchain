@@ -83,7 +83,11 @@ class BackEnd {
                 if (response.data ["status"] != "success") {
                     throw ("Failed to describe network")
                 }
-                ret.push (response.data ["result"] )
+                ret.push ({
+                    url,
+                    other_nodes: response.data ["result"].other_nodes,
+                    pause :  response.data ["result"].pause
+                } )
             } catch (e) {
                 if (e["code"] != "ECONNREFUSED") {
                     console.log(e)
@@ -325,6 +329,31 @@ class BackEnd {
             }
         }
         return await BackEnd.describeNetwork();
+    }
+
+    static async updateMinerPause(url, pause) {
+        const data = JSON.stringify({
+            "pause": parseInt(pause)
+        });
+        const config = {
+            method: 'post',
+            url: url + '/update_miner_pause',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: data
+        };
+        try {
+            const response = await axios(config)
+            if (response.data ["status"] != "success") {
+                throw ("Failed to configure network")
+            }
+        } catch (e) {
+            if (e["code"] != "ECONNREFUSED") {
+                console.log(e)
+                throw ("Failed to configure network")
+            }
+        }
     }
 }
 

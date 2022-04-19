@@ -90,19 +90,67 @@ As a wallet is represented by a public key, before being able to submit a transa
 
 - Click the email in the upper right corner of the web page, this will signout you 
 - Proceed as you did in step **To register** in order to create this second user.
-- Now we have 2 users registered, sign-in with the first user![img.png](img.png)
+- Now we have 2 users registered, sign-in with the first user
 
 <p align="left" width="100%">
     <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/transaction_step_1.png?raw=true">
 </p>
 
-- Select the node "http://localhist:3003" as **Target Blockchain Network Node**
+- Click **Transaction** menu item in the navigation bar
+
+<p align="left" width="100%">
+    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/transaction_step_2.png?raw=true">
+</p>
+
+- Select the node "http://localhost:3003" as **Target Blockchain Network Node**
 - Enter an amount **Transaction Amount**
 - Select the email of the second user as **Target Wallet**
 - Enter the private key of the first registered user
 - Click **Proceed**
 
+<p align="left" width="100%">
+    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/transaction_step_3.png?raw=true">
+</p>
 
+- The transaction has been submitted on node "http://localhost:3003"
+- The transaction will be broadcast to other nodes
+
+Each node for tutorial purpose , mine the transactions at a different rate.
+
+- Node 1 : "http://localhost:3001" --> 5sec
+- Node 2 : "http://localhost:3002" --> 10sec
+- Node 3 : "http://localhost:3003" --> 15sec
+
+This leads the Node 1 to win the consensus whenever one of the other nodes send their blockcahin to challenge it since it will always have the longest one.<br>
+See [Consensus or The Longest Chain rule](https://github.com/gw4e/backend-blockchain/blob/main/README.md) in the backend doc for more information on consensus.
+
+
+#### To Explorer the transactions
+<p align="left" width="100%">
+    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/explore_step_1.png?raw=true">
+</p>
+
+- Click Explore in the navigation bar
+- Select the node "http://localhost:3001"
+- Select the email of the user 1
+- You can see all transactions belonging to this user
+
+<p align="left" width="100%">
+    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/explore_step_2.png?raw=true">
+</p>
+
+Remember that each node has its own blockchain, and even you've submitted the transaction to node "http://localhost:3003", 
+and because all transactions are broadcast, node "http://localhost:3001" has mined it before all other nodes see it and won the consensus.
+
+To see that other nodes have agreed on blockchain maintained by the node "http://localhost:3001" , 
+- Click Explore in the navigation bar
+- Select the node "http://localhost:3002"
+- Move your cursor to the information at the end of the node select box
+- A tooltip appears and display from which node the current blockchain of the selected node comes from
+
+<p align="left" width="100%">
+    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/explore_step_3.png?raw=true">
+</p>
 
 ## Disclaimer:
 This project is only for educational or learning purpose. Use at your own risk.

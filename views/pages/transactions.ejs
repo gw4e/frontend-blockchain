@@ -18,7 +18,7 @@
             <div class="bg-white  ">
                 <section class="w-100 p-4 d-flex justify-content-center pb-4">
 
-                    <form action="/exchange" style="width: 44rem;"   novalidate>
+                    <form id="transactionform" action="/exchange" style="width: 44rem;"   novalidate>
                         <div class="row mb-1">
                             <div class="col-11">
                                 <label for="targetnode" class="form-label">Target Blockchain Network Node</label>
@@ -97,6 +97,9 @@
                         <% if(transactionProcessingMessage) { %>
                             <p id="transactionmessage" class="text-success"><%=transactionProcessingMessage%></p>
                         <% } %>
+                        <div id="invalidtransaction" class="invisible">
+                            <div class="text-danger">Invalid transaction</div>
+                        </div>
                     </form>
                 </section>
             </div>
@@ -112,6 +115,44 @@
 </html>
 
 <script type="text/javascript">
+    function validate () {
+        const displayError =  () => {
+            $('#invalidtransaction').addClass("visible").removeClass("invisible");
+        }
+        const dontDisplayError =  () => {
+            $('#invalidtransaction').addClass("invisible").removeClass("visible");
+        }
+        try {
+            const samount = $('#amounttotransfer').val();
+            if (samount.length > 0) {
+                const amount = parseInt(samount);
+                const balance = parseInt($('#accountbalance').val());
+                if (isNaN(amount) || isNaN(balance) ==  NaN ||  amount > balance) {
+                    displayError();
+                    return false;
+                } else {
+                    dontDisplayError();
+                    return true;
+                }
+            }
+        } catch (e) {
+            displayError();
+            return false;
+        }
+        return false;
+    }
+
+    $("#amounttotransfer").on("input", function() {
+        validate()
+    });
+
+    $('#transactionform').submit(function (event) {
+        if (!validate()) {
+            event.preventDefault();
+            alert("no sub")
+        }
+    });
+
     $('#targetnode').change(function() {
         const wallet = $('#sourcePublicKey').val()
         const targetBackend = $('#targetnode').val()
@@ -137,5 +178,6 @@
 
     })
     $('#nodestatusmessage').addClass("invisible").removeClass("visible");
+    $('#invalidtransaction').addClass("invisible").removeClass("visible");
 </script>
 

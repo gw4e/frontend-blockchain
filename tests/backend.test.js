@@ -116,25 +116,28 @@ describe('Backend Entry Points Tests', () => {
         const newdesc = await BackEnd.describeNetwork();
         expect(newdesc).toEqual([
             {
-                "url": "http://node1:3001",
+                "url": "http://localhost:3001",
                 "other_nodes": [
                     "http://node2:3002",
                     "http://node3:3003"
-                ]
+                ],
+                "pause":5
             },
             {
-                "url": "http://node2:3002",
+                "url": "http://localhost:3002",
                 "other_nodes": [
                     "http://node1:3001",
                     "http://node3:3003"
-                ]
+                ],
+                "pause":10
             },
             {
-                "url": "http://node3:3003",
+                "url": "http://localhost:3003",
                 "other_nodes": [
                     "http://node2:3002",
                     "http://node1:3001"
-                ]
+                ],
+                "pause":15
             }
         ]);
     })
@@ -253,25 +256,28 @@ describe('Backend Entry Points Tests', () => {
     it('Should configure network', async () => {
         const desc = await BackEnd.configureNetwork()
         expect(desc).toEqual([{
-            "url": "http://node1:3001",
+            "url": "http://localhost:3001",
             "other_nodes": [
                 "http://node2:3002",
                 "http://node3:3003"
-            ]
+            ],
+            "pause": 5,
         },
             {
-                "url": "http://node2:3002",
+                "url": "http://localhost:3002",
                 "other_nodes": [
                     "http://node1:3001",
                     "http://node3:3003"
-                ]
+                ],
+                "pause": 10,
             },
             {
-                "url": "http://node3:3003",
+                "url": "http://localhost:3003",
                 "other_nodes": [
                     "http://node2:3002",
                     "http://node1:3001"
-                ]
+                ],
+                "pause": 15,
             }])
     })
 

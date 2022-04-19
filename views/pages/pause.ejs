@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/navbar'); %>
+</header>
+
+<main>
+    <br>
+    <section class="w-100 p-8 d-flex justify-content-center pb-8">
+        <form action="/configurepause" style="width: 44rem;"   novalidate>
+            <div class="form-outline mb-4">
+                <input type="input" id="targetUrl" name="targetUrl" class="form-control" value="<%= url %>" readonly>
+                <label class="form-label" for="pause" style="margin-left: 0px;">Node</label>
+                <div class="form-notch">
+                    <div class="form-notch-leading" style="width: 9px;"></div>
+                    <div class="form-notch-middle" style="width: 88.8px;"></div>
+                    <div class="form-notch-trailing"></div>
+                </div>
+            </div>
+            <div class="form-outline mb-4">
+                <input type="input" id="pause" name="pause" class="form-control">
+                <label class="form-label" for="pause" style="margin-left: 0px;">Pause</label>
+                <div class="form-notch">
+                    <div class="form-notch-leading" style="width: 9px;"></div>
+                    <div class="form-notch-middle" style="width: 88.8px;"></div>
+                    <div class="form-notch-trailing"></div>
+                </div>
+            </div>
+
+            <input  type="submit" formmethod="post" id="configurepause" class="w-100 btn btn-primary btn-block" value="Configure">
+            <% if(error) { %>
+                <p class="text-danger">Please enter a valid value</p>
+            <% } %>
+
+        </form>
+    </section>
+
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
+
+<!--
+<script type="text/javascript">
+    function configure () {
+        const pause = $('#pause').val()
+        const targetUrl = $('#targetUrl').val()
+        $.ajax({
+            url: '/configurepause',
+            method: 'POST',
+            data: JSON.stringify({"targetUrl" : targetUrl, "pause": pause}),
+            headers: {
+                'content-type': 'application/json',
+            },
+            success: function(data) {
+                console.log("success")
+            },
+            error: function(data) {
+                console.log("error")
+            }
+        });
+    }
+    $("#configurepause").click(function(){
+        configure();
+    });
+</script>
+-->
