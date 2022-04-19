@@ -1,10 +1,17 @@
+## Pycotr FrontEnd
+### _A blockchain front end for a naive cryptocurrency_
 
-A Decentralized Application is a piece of software that has its backend code running on a decentralized peer to peer network. This project holds the frontend part that connects with the backend to provide its features. If you did not yet read the backend [documentation](https://github.com/gw4e/backend-blockchain/blob/main/README.md), please do so !
+### Pycotr <img src="http://github.com/gw4e/frontend-blockchain/blob/main/public/images/brand-white.png?raw=true" data-canonical-src="http://github.com/gw4e/frontend-blockchain/blob/main/public/images/brand-white.png" width="30" height="30" /> FrontEnd
+
+
+
+A Decentralized Application is a piece of software that has its backend code running on a decentralized peer to peer network. 
+This project holds the frontend part that connects with the backend to provide its features. If you did not yet read the backend [documentation](https://github.com/gw4e/backend-blockchain/blob/main/README.md), please do so !
 
 ## Features
-With the front -, you will be able to :
+With the front, you will be able to :
 
-- Create an account and register to become a Pyciotr trader :-)
+- Create an account and register to become a Pycotr trader :-)
 - Sign-In the Pycotr web site
 - Configure the network nodes
 - Submit transactions
@@ -32,7 +39,7 @@ Install the dependencies and start the server.
 - Run **start.sh**
 
 ## Testing
-Execute unit tests and integration tests by running **npm run test**
+Execute unit tests and integration tests by running **npm run test**<br>
 Execute e2e tests by running **npm run test:e2e**
 
 ## Debugging
@@ -44,7 +51,7 @@ Start in debug mode the **main.js** file.
 
 #### To register
 <p align="left" width="100%">
-    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/register.png?raw=true">
+    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/register.png?raw=true">
 </p>
 
 - In a browser, enter http://localhost:8080
@@ -54,7 +61,7 @@ Start in debug mode the **main.js** file.
 - Click Register
 
 <p align="left" width="100%">
-    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/regsitration_details.png?raw=true">
+    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/regsitration_details.png?raw=true">
 </p>
 
 - Copy the private key
@@ -62,7 +69,7 @@ Start in debug mode the **main.js** file.
 
 #### To Sign-In
 <p align="left" width="100%">
-    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/sign-in.png?raw=true">
+    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/sign-in.png?raw=true">
 </p>
 
 - Feed the form with the **email prefix** (for example 'test'  if you've registered with test@gg.com)
@@ -70,14 +77,14 @@ Start in debug mode the **main.js** file.
 
 #### To Configure the network (mandatory steps)
 <p align="left" width="100%">
-    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/configure_step_1.png?raw=true">
+    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/configure_step_1.png?raw=true">
 </p>
 
 - Click Configure in the navigation bar
 - Click the configure button
 
 <p align="left" width="100%">
-    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/configure_step_2.png?raw=true">
+    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/configure_step_2.png?raw=true">
 </p>
 
 - The network configuration is displayed
@@ -93,13 +100,13 @@ As a wallet is represented by a public key, before being able to submit a transa
 - Now we have 2 users registered, sign-in with the first user
 
 <p align="left" width="100%">
-    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/transaction_step_1.png?raw=true">
+    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/transaction_step_1.png?raw=true">
 </p>
 
 - Click **Transaction** menu item in the navigation bar
 
 <p align="left" width="100%">
-    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/transaction_step_2.png?raw=true">
+    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/transaction_step_2.png?raw=true">
 </p>
 
 - Select the node "http://localhost:3003" as **Target Blockchain Network Node**
@@ -109,7 +116,7 @@ As a wallet is represented by a public key, before being able to submit a transa
 - Click **Proceed**
 
 <p align="left" width="100%">
-    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/transaction_step_3.png?raw=true">
+    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/transaction_step_3.png?raw=true">
 </p>
 
 - The transaction has been submitted on node "http://localhost:3003"
@@ -127,7 +134,7 @@ See [Consensus or The Longest Chain rule](https://github.com/gw4e/backend-blockc
 
 #### To Explorer the transactions
 <p align="left" width="100%">
-    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/explore_step_1.png?raw=true">
+    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/explore_step_1.png?raw=true">
 </p>
 
 - Click Explore in the navigation bar
@@ -136,7 +143,7 @@ See [Consensus or The Longest Chain rule](https://github.com/gw4e/backend-blockc
 - You can see all transactions belonging to this user
 
 <p align="left" width="100%">
-    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/explore_step_2.png?raw=true">
+    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/explore_step_2.png?raw=true">
 </p>
 
 Remember that each node has its own blockchain, and even you've submitted the transaction to node "http://localhost:3003", 
@@ -149,7 +156,7 @@ To see that other nodes have agreed on blockchain maintained by the node "http:/
 - A tooltip appears and display from which node the current blockchain of the selected node comes from
 
 <p align="left" width="100%">
-    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/explore_step_3.png?raw=true">
+    <img width="50%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/explore_step_3.png?raw=true">
 </p>
 
 ## Disclaimer:
