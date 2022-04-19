@@ -54,7 +54,7 @@ Start in debug mode the **main.js** file.
 - Click Register
 
 <p align="left" width="100%">
-    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/register_details.png?raw=true">
+    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/regsitration_details.png?raw=true">
 </p>
 
 - Copy the private key
@@ -65,9 +65,12 @@ Start in debug mode the **main.js** file.
     <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/sign-in.png?raw=true">
 </p>
 
-- Feed the form
+- Feed the form with the **email prefix** (for example 'test'  if you've registered with test@gg.com)
 - Click Sign-In
 
+#### To Configure the network (mandatory steps)
+- Click Configure in the navigation bar
+- Click the configure button
 
 ## Disclaimer:
 This project is only for educational or learning purpose. Use at your own risk.
