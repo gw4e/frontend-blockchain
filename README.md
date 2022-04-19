@@ -18,6 +18,7 @@ With the front, you will be able to :
 - Configure the network nodes
 - Submit transactions
 - Explore the content of the blockchain for each of the nodes
+- Mofify the mining rate if the nodes and see the impact on the [consensus](https://github.com/gw4e/backend-blockchain) 
 
 
 ## Tech
