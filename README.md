@@ -69,8 +69,16 @@ Start in debug mode the **main.js** file.
 - Click Sign-In
 
 #### To Configure the network (mandatory steps)
+<p align="left" width="100%">
+    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/configure_step_1.png?raw=true">
+</p>
+
 - Click Configure in the navigation bar
 - Click the configure button
+
+<p align="left" width="100%">
+    <img width="33%" src="https://github.com/gw4e/frontend-blockchain/blob/main/doc/configure_step_2.png?raw=true">
+</p>
 
 ## Disclaimer:
 This project is only for educational or learning purpose. Use at your own risk.
